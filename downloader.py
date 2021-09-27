@@ -3,8 +3,11 @@ import pandas as pd
 from tqdm import tqdm
 import ffmpeg
 import os
+import sys
 
-url = "https://www.youtube.com/watch?v=a3ICNMQW7Ok"
+#url = "https://www.youtube.com/watch?v=a3ICNMQW7Ok"
+url = sys.argv[1]
+
 
 def GET_VIDEO_ID(url):
     x = url.split("=")
@@ -37,7 +40,7 @@ x = r.content.decode("utf-8")
 
 innertubeApiKey = (((x.split('"innertubeApiKey":"'))[1]).split('"'))[0]
 
-print(innertubeApiKey)
+#print(innertubeApiKey)
 
 
 
